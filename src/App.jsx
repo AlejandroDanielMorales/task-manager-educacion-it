@@ -4,6 +4,7 @@ import Footer from "./components/Footer/Footer";
 import TaskForm from "./components/TaskForm/TaskForm";
 import TaskList from "./components/TaskList/TaskList";
 import TaskListDone from "./components/TaskListDone/TaskListDone";
+import { v4 as uuidv4 } from 'uuid';
 import "./App.css";
 
 export default function App() {
@@ -15,10 +16,11 @@ export default function App() {
   const addTask = (text) => {
 
     const finded = tasks.find(task => task.text === text)
-    console.log(finded)
+  
 
     if (finded === undefined) {
-      const newTask = { id: Date.now(), text, releaseDate:new Date().toLocaleString(),resolveDate:"N/A", state: "Pendiente" };
+      const newTask = { id: uuidv4(), text, releaseDate:new Date().toLocaleString(),resolveDate:"N/A", state: "Pendiente" };
+      console.log(newTask)
       const arrayPostCoppied2 = [...tasks]
       arrayPostCoppied2.push(newTask)
       setTasks(arrayPostCoppied2);
