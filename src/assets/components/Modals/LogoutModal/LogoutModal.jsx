@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOut, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import "./LogoutModal.css"; // Asegúrate de tener este archivo CSS para los estilos
 
 
 export default function LogoutModal({ onClose, onConfirm }) {
